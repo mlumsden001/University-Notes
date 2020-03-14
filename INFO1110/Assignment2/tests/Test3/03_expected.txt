@@ -1,0 +1,35 @@
+
++---------N----------+
+|                    |
+|                    |
+|                    |
+|                    |
+W                    E
+|                    |
+|                    |
+|                    |
+|                    |
++--------S-----------+
+You are standing in the Foyer.
+There is nothing here.
+
+>>> S
+
+
++--------------------+
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
++--------SS----------+
+You are standing in the Entrance. 
+The sword is wedged in the stone. 
+
+>>> PULL SWORD
+
+The sword does not budge.

@@ -1,0 +1,3 @@
+Book | GRAB BOOK | GRAB the book from the snake. | A book sits guarded by a
+snake. | The snake slithers away. | WILL 10 | The snake bites at you. | You
+snatch the book from the snake. | Parlour 

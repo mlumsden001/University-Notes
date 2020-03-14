@@ -1,0 +1,7 @@
+print("Hello")
+print("I will add two numbers for you")
+n1 = input("Enter the first number: ")
+n1 = int(n1)
+n2 = input("Enter the second number: ")
+n2 = int(n2)
+print("The sum of your numbers is: ", n1 + n2)
