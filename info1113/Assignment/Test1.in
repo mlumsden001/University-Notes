@@ -1,0 +1,17 @@
+> SET a 1 2 3 4 
+
+> PUSH a 3
+
+> GET a
+
+> SET b 2 3 4 
+
+> SNAPSHOT 
+
+> REV b
+
+> LIST SNAPSHOTS
+
+> LIST ENTRIES
+
+> BYE

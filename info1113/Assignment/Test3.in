@@ -1,0 +1,19 @@
+> SET a 99 98 97 96 95
+
+> PLUCK a 1
+
+> SNAPSHOT
+
+> LEN a
+
+> SET b 3 4 5 6
+
+> SNAPSHOT
+
+> LIST SNAPSHOTS
+
+> DROP 1
+
+> LIST SNAPSHOTS
+
+> BYE

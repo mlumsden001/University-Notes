@@ -1,0 +1,19 @@
+> MIN a
+
+> RESTORE test.txt
+
+> SET a 1 1 2 2 3 4 5
+
+> SET b 4 4 4 5 6 7 7 
+
+> POP b
+
+> UNIQ a
+
+> UNIQ b
+
+> APPEND a 5 6 7
+
+> LIST ENTRIES
+
+> BYE
