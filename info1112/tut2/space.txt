@@ -1,0 +1,11 @@
+antispace
+aspace
+backspace
+hyperspace
+interspace
+letterspace
+midspace
+quarterspace
+respace
+space
+subspace
