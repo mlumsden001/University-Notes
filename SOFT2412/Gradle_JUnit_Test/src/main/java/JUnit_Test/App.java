@@ -45,6 +45,7 @@ public class App {
   }
 
     public static void main(String[] args) {
-        System.out.println(new App().add(1,2));
+        //System.out.println(new App().add(1,2));
+        System.out.println("sucks to suck");
     }
 }

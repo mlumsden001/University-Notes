@@ -1,0 +1,108 @@
+CREATE TABLE Department (
+	Name VARCHAR(80) PRIMARY KEY,
+	Budget FLOAT
+);
+
+CREATE TABLE OfficeLocations (
+	DeptName VARCHAR(80)  REFERENCES Department(Name),
+	Location VARCHAR(80) NOT NULL
+);
+
+CREATE TABLE Device (
+	SerialNumber INTEGER UNIQUE NOT NULL,
+	PurchaseDate DATE,
+	DeviceID INTEGER PRIMARY KEY,
+	PurchaseCost FLOAT
+);
+
+CREATE TABLE Employee (
+	EmpID INTEGER PRIMARY KEY,
+	Name VARCHAR(80),
+	DateOfBirth DATE,
+	HomeAddress VARCHAR(80)
+);
+
+CREATE TABLE PhoneNumbers(
+EmpID INTEGER REFERENCES Employee(EmpID),
+PhoneNumbers INTEGER
+);
+
+
+CREATE TABLE Model (
+	ModelNumber INTEGER,
+	Manufacturer VARCHAR(80),
+	Weight FLOAT,
+	Description VARCHAR(120),
+	PRIMARY KEY (ModelNumber, Manufacturer)
+);
+
+
+CREATE TABLE Repair (
+	RepairID INTEGER PRIMARY KEY,
+	StartDate DATE,
+	EndDate DATE,
+	Cost FLOAT,
+	FaultReport VARCHAR(120)
+);
+
+
+CREATE TABLE Service (
+	Owed FLOAT,
+	ServiceName VARCHAR(80),
+	ABN NUMERIC(11, 0) PRIMARY KEY,
+	Email VARCHAR(80)
+);
+
+
+CREATE TABLE Component (
+DeviceID INTEGER REFERENCES Device(DeviceID)
+Primary Key (DeviceID)
+);
+
+CREATE TABLE Features (
+	DeviceID INTEGER REFERENCES Component(DeviceID),
+	Type VARCHAR(80),
+	Value FLOAT
+);
+
+
+CREATE TABLE Peripheral (
+DeviceID INTEGER REFERENCES Device(DeviceID),
+ErgonomicScore INTEGER
+);
+
+
+CREATE TABLE AllocatedTo (
+	DeptName VARCHAR(80) REFERENCES Department(Name),
+	Manufacturer VARCHAR(80) REFERENCES Model(Manufacturer),
+	ModelNumber INTEGER REFERENCES Model(ModelNumber),
+	MaxNumber INTEGER
+);
+
+CREATE TABLE WorksIn (
+	DeptName VARCHAR(80) REFERENCES Department(Name),
+	EmpID INTEGER REFERENCES Employee(EmpID),
+	Fraction FLOAT,
+	CONSTRAINT checkFraction CHECK (Fraction BETWEEN 0 AND 1)
+);
+
+CREATE TABLE usedBy (
+	DeviceID INTEGER REFERENCES Device(DeviceID),
+	EmpID INTEGER REFERENCES Employee(EmpID)
+);
+
+CREATE TABLE IssuedTo (
+	DeviceID REFERENCES Device(DeviceID),
+	CONSTRAINT EmpID REFERENCES Employee(EmpID)
+);
+
+CREATE TABLE DoneBy (
+	RepairID INTEGER REFERENCES Repair(RepairID),
+	CONSTRAINT ABN NUMERIC(11, 0) REFERENCES Service(ABN)
+);
+
+CREATE TABLE DoneTo(
+	RepairID INTEGER REFERENCES Repair(RepairID),
+	DeviceID INTEGER REFERENCES Device(DeviceID)
+);
+

@@ -1,0 +1,2 @@
+def path(G, s, t):
+    
